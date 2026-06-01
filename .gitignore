@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+
+venv/
+.venv/
+
+.vscode/
+.idea/
+
+canny_val.csv
+numpy_array_results
+desmos_equations_list
+
+contours_none_image1.jpg
