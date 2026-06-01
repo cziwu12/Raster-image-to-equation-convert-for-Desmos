@@ -2,21 +2,19 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-yesOptions = ['yes', 'y', 'Yes', 'Y']
+yesOptions = ['yes', 'y']
 simplified_contours = []
 allp0 = []
 allp1 = []
 allp2 = []
 desmosList = []  
 
-IMG_PATH = input("image path: ").strip('"\'')
+IMG_PATH = input("image path: ").strip('"\'# ')
 img = cv2.imread(IMG_PATH) 
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-useBlur = input("is blur needed?: ") in yesOptions
-#"C:\Users\notcz\Downloads\2bike.jpg"
-#"C:\Users\notcz\OneDrive\Documents\istockphoto-1456467039-612x612.jpg"
-#
+useBlur = input("is blur needed?: ").lower() in yesOptions
+
 targetImg = (cv2.bilateralFilter(gray, d=4, sigmaColor=140, sigmaSpace=150) if useBlur else gray)
 
 #cv2.imshow("window", smoothed)
@@ -104,12 +102,6 @@ plt.ylabel("Y")
 plt.legend()
 plt.grid(True)
 plt.show()
-#   "C:\Users\notcz\OneDrive\Documents\btrscene1.jpeg"
-#   "C:\Users\notcz\OneDrive\Documents\bike.jpg"
-#   "C:\Users\notcz\OneDrive\Documents\tks.png"
-#   "C:\Users\notcz\OneDrive\Documents\gawr1744782793-0.jpg"
-#   "C:\Users\notcz\OneDrive\Documents\images.jpeg"
-# "C:\Users\notcz\OneDrive\Documents\realine.png"
 
 # cubic bezier:  (1 - t)^3 * p0 + 3 * (1 - t)^2 * t * p1 + 3 * (1 - t) * t^2 * p2 + t^3 * p3
 
