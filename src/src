@@ -13,7 +13,7 @@ IMG_PATH = input("image path: ").strip('"\'# ')
 img = cv2.imread(IMG_PATH) 
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-useBlur = input("is blur needed?: ").lower() in yesOptions
+useBlur = input("is blur needed? (Type yes if needed, else just enter any key): ").lower() in yesOptions
 
 targetImg = (cv2.bilateralFilter(gray, d=4, sigmaColor=140, sigmaSpace=150) if useBlur else gray)
 
@@ -22,13 +22,13 @@ targetImg = (cv2.bilateralFilter(gray, d=4, sigmaColor=140, sigmaSpace=150) if u
 #cv2.destroyAllWindows()
 
 if useBlur:
-    cv2.imshow("window", targetImg)
+    cv2.imshow("Blur (Enter any key to close)", targetImg)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
 canny = cv2.Canny(targetImg, 50, 150)
 
-cv2.imshow("window", canny)
+cv2.imshow("Canny (Enter any key to close)", canny)
 cv2.waitKey()
 cv2.destroyAllWindows()
 
@@ -49,7 +49,7 @@ print(simplified_contours)
 img_copy = img.copy()
 cv2.drawContours(img_copy, simplified_contours, -1, (0, 255, 0), 3)
 
-cv2.imshow('None approximation', img_copy)
+cv2.imshow("None approximation (Enter any key to close)", img_copy)
 cv2.waitKey(0)
 cv2.imwrite('contours_none_image1.jpg', img_copy)
 cv2.destroyAllWindows()
@@ -93,15 +93,6 @@ desmosList = [
 
 with open("desmos_equations_list", 'w') as desmos:
     desmos.write("\n".join(desmosList))
-
-plt.plot(x1, desmos_y1)
-#plt.scatter(x1, desmos_y1)
-plt.title("Quadratic Bézier Curve")
-plt.xlabel("X")
-plt.ylabel("Y")
-plt.legend()
-plt.grid(True)
-plt.show()
 
 # cubic bezier:  (1 - t)^3 * p0 + 3 * (1 - t)^2 * t * p1 + 3 * (1 - t) * t^2 * p2 + t^3 * p3
 
