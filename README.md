@@ -55,14 +55,3 @@ Also I’m currently still using the quadratic bezier curve for every edge which
 
 
 
-
-
-
-
-
-
-
-
-## How it works
-
-## Limitations
