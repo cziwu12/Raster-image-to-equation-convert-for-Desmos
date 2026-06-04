@@ -1,6 +1,9 @@
 # Raster-image-to-equation-convert-for-Desmos
 A programme where it converts the uploaded image into a set of parametric mathematical equations where it could be plotted onto Desmos.
 
+## Demo Video
+https://www.youtube.com/watch?v=rpl_OB6h-_g (I can't show it directly bcs file too big)
+
 ## Installation
 1. Clone the repo or download it as a ZIP file.
 ```bash
