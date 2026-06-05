@@ -8,7 +8,7 @@ allp0 = []
 allp1 = []
 allp2 = []
 desmosList = []  
-#"C:\Users\notcz\OneDrive\Documents\istockphoto-1456467039-612x612.jpg"
+ 
 IMG_PATH = input("image path: ").strip('"\'# ')
 img = cv2.imread(IMG_PATH) 
 
