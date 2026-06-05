@@ -97,4 +97,5 @@ desmosList = [
 
 with open("desmos_equations_list", 'w') as desmos:
     desmos.write("\n".join(desmosList))
-print("Done, now copy everything from desmos_eqautions_list")
+print(f"Generated {len(desmosList)} equations")
+print("Saved to desmos_equations_list.txt")
